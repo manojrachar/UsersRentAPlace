@@ -62,7 +62,7 @@ public class UserRestController {
 	@GetMapping("/users")
 	public ResponseEntity<?> getAllUsers(){
 		if(this.userService.getAllUsers() != null) {
-			return ResponseEntity.ok().body(HttpStatus.OK);
+			return ResponseEntity.ok().body(userService.getAllUsers());
 		}
 		return ResponseEntity.badRequest().body(new ResponsePage(Messages.FAILURE,"User fetch failed"));
 	}
